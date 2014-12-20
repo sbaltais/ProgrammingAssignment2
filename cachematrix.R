@@ -19,8 +19,8 @@
 ## If X is a square inverte matrix,  solve(X) will return its inverse.
 
 
-## to initial getMatrix call:  getMatrix <- makeCacheMatrix(y). This returns the inverse matrix to be used
-## in the cacheSolve function.
+## to initiate getMatrix do the following:  
+## getMatrix <- makeCacheMatrix(y). This returns the inverse matrix to be used in the cacheSolve function.
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -37,7 +37,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ## if the matrix variable passed by the function is equal to the 'inverse' of the cached inverted matrix  
 ## the cached inverted matrix is returned. if they are not the same, the inverse of the passed matrix variable is 
 ## calculated and returned.
-##
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
@@ -47,19 +46,19 @@ cacheSolve <- function(x, ...) {
   ## save stored matrix in setMatrix
   setMatrix <- m
    
-  ## if setMatrix  equals getMatrix (the stored inverse of a Matrix) the inverse of SetMatrix is returned.
+  ## if setMatrix  equals getMatrix (the stored inverse of a Matrix) the inverse of SetMatrix (getMatrix) is returned.
   if (all.equal(solve(getMatrix),setMatrix) == TRUE)  {
-    print("Returning the inverse matrix that is already stored.")
+    print("Returning the inverse matrix that is already cached.")
     ## returned cached inverse matrix
     return(getMatrix)
     
   }
   else {
     
-    ## the passed variable type matrix doesnt equal the inverse of the cached inverted matrix therefore calculate the 
+    ## If the passed variable type matrix doesnt equal the inverse of the cached inverted matrix calculate the 
     ## inverse of matrix passed by the function.
     getMatrix <- solve(setMatrix)
-    print("cached inverse matrix not found, returning inverse of matrix.")
+    print("cached inverse matrix not found, returning the inverse of matrix you provided.")
     return(getMatrix)
   }
       
