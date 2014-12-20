@@ -45,10 +45,6 @@ cacheSolve <- function(x, ...) {
   m <- x
   ## save stored matrix in setMatrix
   setMatrix <- m
-  print("getmatrix")
-  print(getMatrix)
-  print("get setMatrix")
-  print(setMatrix)
    
   ## if setMatrix  equals getMatrix (the stored inverse of a Matrix) the inverse of SetMatrix is returned.
   if (all.equal(solve(getMatrix),setMatrix) == TRUE)  {
