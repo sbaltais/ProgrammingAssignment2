@@ -18,6 +18,7 @@
 ## Computing the inverse of a square matrix will be done with the solve function in R. 
 ## If X is a square inverte matrix,  solve(X) will return its inverse.
 
+
 ## to initial getMatrix call:  getMatrix <- makeCacheMatrix(y). This returns the inverse matrix to be used
 ## in the cacheSolve function.
 
@@ -51,7 +52,6 @@ cacheSolve <- function(x, ...) {
    
   ## if setMatrix  equals getMatrix (the stored inverse of a Matrix) the inverse of SetMatrix is returned.
   if (all.equal(solve(getMatrix),setMatrix) == TRUE)  {
-    
     print("Returning the inverse matrix that is already stored.")
     ## returned cached inverse matrix
     return(getMatrix)
