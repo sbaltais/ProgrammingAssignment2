@@ -37,6 +37,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## if the matrix variable passed by the function is equal to the 'inverse' of the cached inverted matrix  
 ## the cached inverted matrix is returned. if they are not the same, the inverse of the passed matrix variable is 
 ## calculated and returned.
+##
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
